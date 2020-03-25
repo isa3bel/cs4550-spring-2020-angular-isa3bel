@@ -12,6 +12,8 @@ import { CourseViewerComponent } from './components/course-viewer/course-viewer.
 import { HomeComponent } from './components/home/home.component';
 import { ModuleListComponent } from './components/module-list/module-list.component';
 import { LessonTabsComponent } from './components/lesson-tabs/lesson-tabs.component';
+import { QuizzesComponent } from './quizzes/quizzes.component';
+import { QuizComponent } from './quiz/quiz.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { LessonTabsComponent } from './components/lesson-tabs/lesson-tabs.compon
     CourseViewerComponent,
     HomeComponent,
     ModuleListComponent,
-    LessonTabsComponent
+    LessonTabsComponent,
+    QuizzesComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,
