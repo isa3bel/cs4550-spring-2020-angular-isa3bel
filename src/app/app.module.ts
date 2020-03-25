@@ -14,6 +14,8 @@ import { ModuleListComponent } from './components/module-list/module-list.compon
 import { LessonTabsComponent } from './components/lesson-tabs/lesson-tabs.component';
 import { QuizzesComponent } from './quizzes/quizzes.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { TrueFalseQuestionComponent } from './true-false-question/true-false-question.component';
+import { MultipleChoiceQuestionComponent } from './multiple-choice-question/multiple-choice-question.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { QuizComponent } from './quiz/quiz.component';
     ModuleListComponent,
     LessonTabsComponent,
     QuizzesComponent,
-    QuizComponent
+    QuizComponent,
+    TrueFalseQuestionComponent,
+    MultipleChoiceQuestionComponent
   ],
   imports: [
     BrowserModule,
