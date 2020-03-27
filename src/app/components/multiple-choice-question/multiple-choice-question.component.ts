@@ -10,7 +10,7 @@ export class MultipleChoiceQuestionComponent implements OnInit {
   constructor() { }
 
   @Input()
-  question = {}
+  question
   answer = ''
   ngOnInit(): void {
   }

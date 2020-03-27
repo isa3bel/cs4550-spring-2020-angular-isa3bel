@@ -10,7 +10,7 @@ export class TrueFalseQuestionComponent implements OnInit {
   constructor() { }
 
   @Input()
-  question = {}
+  question
   answer = ''
   ngOnInit(): void {
   }
