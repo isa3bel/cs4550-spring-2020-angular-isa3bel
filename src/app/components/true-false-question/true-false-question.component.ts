@@ -11,6 +11,7 @@ export class TrueFalseQuestionComponent implements OnInit {
   @Input()
   question
   answer = ''
+
   ngOnInit(): void {
   }
 

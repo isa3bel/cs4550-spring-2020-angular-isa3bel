@@ -7,13 +7,13 @@
         name="{{question._id}}"/>True</li>
 </label>
 </ul>
-<br>
-<label>
-  <input type="radio"
+<ul class="list-group"><label>
+  <li class="list-group-item"><input type="radio"
         [(ngModel)]="answer"
         value="false"
-        name="{{question._id}}"/>False
+        name="{{question._id}}"/>False</li>
 </label>
+</ul>
 <br>
 <button class="btn-success btn">Grade</button>
 <br>

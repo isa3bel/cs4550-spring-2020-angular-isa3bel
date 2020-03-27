@@ -21,10 +21,12 @@
   <li *ngFor="let course of courses" class="list-group-item row">
     <a href="table/course/{{ course._id }}" class="col">
       {{ course.title }}
+      
     </a>
     <a class="float-right"
        href="/courses/{{course._id}}/quizzes">
       Quizzes
+      
     </a>
 
   </li>
