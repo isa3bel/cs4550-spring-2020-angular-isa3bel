@@ -10,9 +10,10 @@ export class TrueFalseQuestionComponent implements OnInit {
 
   @Input()
   question
-  answer = ''
-
-  ngOnInit(): void {
-  }
-
+  answer = "";
+  grading = false;
+  grade = () => {
+    this.grading = true;
+  };
+  ngOnInit(): void {}
 }
