@@ -1,17 +1,31 @@
-<h1>{{title}}</h1>
+<h1>{{ title }}</h1>
 
 <form class="row form-inline">
-  <input class="col-4 form-control" [(ngModel)]="newCourseTitle" [ngModelOptions]="{standalone: true}"/>
-  <button class="col-2 btn btn-outline-success" (click)="createCourse(newCourseTitle)">
+  <input
+    class="col-4 form-control"
+    [(ngModel)]="newCourseTitle"
+    [ngModelOptions]="{ standalone: true }"
+  />
+  <button
+    class="col-2 btn btn-outline-success"
+    (click)="createCourse(newCourseTitle)"
+  >
     Create course
-  </button> 
+  </button>
 </form>
 <ul></ul>
-<ul class="list-group heading"><li class="list-group-item row">Course Name</li></ul>
+<ul class="list-group heading">
+  <li class="list-group-item row">Course Name</li>
+</ul>
 <ul class="list-group">
-  <li *ngFor="let course of courses"class="list-group-item row" >
-    <a href="table/course/{{course._id}}" class="col">
-      {{course.title}}
+  <li *ngFor="let course of courses" class="list-group-item row">
+    <a href="table/course/{{ course._id }}" class="col">
+      {{ course.title }}
     </a>
+    <a class="float-right"
+       href="/courses/{{course._id}}/quizzes">
+      Quizzes
+    </a>
+
   </li>
-</ul> 
+</ul>

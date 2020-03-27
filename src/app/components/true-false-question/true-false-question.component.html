@@ -6,14 +6,13 @@
         [(ngModel)]="answer"
         name="{{question._id}}"/>True
 </label>
-</br>
+
 <label>
   <input type="radio"
         [(ngModel)]="answer"
         value="false"
         name="{{question._id}}"/>False
 </label>
-</br>
 Your Answer: {{answer}}
 <div>
 Correct answer: {{question.correct}}
