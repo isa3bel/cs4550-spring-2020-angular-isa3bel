@@ -1,21 +1,23 @@
 <h3>{{question.title}}</h3>
 <h4>{{question.question}}</h4>
-<label>
-  <input type="radio"
+<ul class="list-group"><label>
+  <li class="list-group-item"><input type="radio"
         value="true"
         [(ngModel)]="answer"
-        name="{{question._id}}"/>True
+        name="{{question._id}}"/>True</li>
 </label>
-
+</ul>
+<br>
 <label>
   <input type="radio"
         [(ngModel)]="answer"
         value="false"
         name="{{question._id}}"/>False
 </label>
+<br>
+<button class="btn-success btn">Grade</button>
+<br>
 Your Answer: {{answer}}
-<div>
-Correct answer: {{question.correct}}
-</div>
+
 <span [hidden]="answer !== question.correct">Yay!</span>
 <span [hidden]="answer === question.correct">Oops!</span>
