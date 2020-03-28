@@ -1,4 +1,4 @@
-<h3>{{question.title}}</h3>
+
 <h4>{{question.question}}</h4>
 <ul class="list-group"><label>
   <li class="list-group-item"><input type="radio"
@@ -10,14 +10,16 @@
 <ul class="list-group"><label>
   <li class="list-group-item"><input type="radio"
         [(ngModel)]="answer"
+        [ngClass]="{'correct': question.correct === answer}"
         value="false"
-        name="{{question._id}}"/>False</li>
+        name="{{question._id}}" />False</li>
 </label>
 </ul>
 <br>
-<button class="btn-success btn">Grade</button>
-<br>
 Your Answer: {{answer}}
+<br><br>
+<button class="btn-success btn" (click)="grade()">Grade</button>
 
-<span [hidden]="answer !== question.correct">Yay!</span>
-<span [hidden]="answer === question.correct">Oops!</span>
+
+<!-- <span [hidden]="answer !== question.correct">Yay!</span>
+<span [hidden]="answer === question.correct">Oops!</span> -->

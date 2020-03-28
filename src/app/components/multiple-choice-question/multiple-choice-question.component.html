@@ -1,8 +1,14 @@
-<h3>{{question.title}}</h3>
 <h4>{{question.question}}</h4>
-<div *ngFor="let choice of question.choices">
-  <input type="radio" [(ngModel)]="answer" value="{{choice}}" name="{{question._id}}"/> {{choice}}
+<div *ngFor="let option of question.choices">
+  <ul class="list-group"><label>
+    <li class="list-group-item"><input [(ngModel)]="answer"
+           type="radio"
+           value="{{option}}"
+           name="{{question._id}}"/> {{option}}</li>
+  </label></ul>
 </div>
+<br>
 Your answer: {{answer}}
-<br/>
-Correct Answer: {{question.correct}}
+<br>
+<br>
+<button class="btn-success btn" >Grade</button>
