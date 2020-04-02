@@ -12,6 +12,16 @@ export class MultipleChoiceQuestionComponent implements OnInit {
   @Input()
   question
   answer = ''
+  grading = false
+  correct
+  grade = () => {
+    this.grading = true;
+    console.log(this.grading);
+    if (this.answer === this.question.correct) {
+      this.correct = true;
+    }
+  };
+
   ngOnInit(): void {
   }
 
