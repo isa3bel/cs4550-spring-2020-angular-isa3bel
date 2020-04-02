@@ -12,7 +12,7 @@ export class TrueFalseQuestionComponent implements OnInit {
   question
   answer = "";
   grading = false;
-  correct = false;
+  correct
   grade = () => {
     this.grading = true;
     console.log(this.grading);

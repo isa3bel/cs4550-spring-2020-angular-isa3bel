@@ -1,25 +1,44 @@
-
-<h4>{{question.question}}</h4>
-<ul class="list-group"><label>
-  <li class="list-group-item"><input type="radio"
+<h4>{{ question.question }}</h4>
+<ul class="list-group">
+  <label>
+    <li
+      class="list-group-item"
+      [ngClass]="{
+        'list-group-item-success':
+          (answer === question.correct && grading && answer === 'true') || (answer !== question.correct && grading && answer === 'false'),
+        'list-group-item-danger':
+          answer !== question.correct && grading && answer === 'true'
+      }"
+    >
+      <input
+        type="radio"
         value="true"
         [(ngModel)]="answer"
-        name="{{question._id}}"/>True</li>
-</label>
+        name="{{ question._id }}"
+      />True
+    </li>
+  </label>
 </ul>
-<ul class="list-group"><label>
-  <li class="list-group-item"><input type="radio"
+<ul class="list-group">
+  <label>
+    <li
+      class="list-group-item"
+      [ngClass]="{
+        'list-group-item-success':
+          (answer === question.correct && grading && answer === 'false') || (answer !== question.correct && grading && answer === 'true'),
+        'list-group-item-danger':
+          answer !== question.correct && grading && answer === 'false'
+      }"
+    >
+      <input
+        type="radio"
         [(ngModel)]="answer"
-        [ngClass]="{'correct': question.correct === answer}"
         value="false"
-        name="{{question._id}}" />False</li>
-</label>
+        name="{{ question._id }}"
+      />False
+    </li>
+  </label>
 </ul>
-<br>
-Your Answer: {{answer}}
-<br><br>
+<br />
+Your Answer: {{ answer }} <br /><br />
 <button class="btn-success btn" (click)="grade()">Grade</button>
-
-
-<!-- <span [hidden]="answer !== question.correct">Yay!</span>
-<span [hidden]="answer === question.correct">Oops!</span> -->
