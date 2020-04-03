@@ -1,4 +1,10 @@
-<h4>{{ question.question }}</h4>
+<h4>{{ question.question }} <i
+  class="fa"
+  [ngClass]="{
+    'fa-check': answer === question.correct && grading,
+    'fa-times': answer !== question.correct && grading
+  }"
+></i></h4> 
 <div *ngFor="let option of question.choices">
   <ul class="list-group">
     <label>
@@ -21,8 +27,19 @@
           type="radio"
           value="{{ option }}"
           name="{{ question._id }}"
+          
         />
-        {{ option }}
+        {{ option }} <i class="fa" [ngClass]="{
+          'fa-check':
+            (answer === question.correct &&
+              grading &&
+              question.correct === option) ||
+            (answer !== question.correct &&
+              grading &&
+              option === question.correct),
+          'fa-times':
+            answer !== question.correct && grading && answer === option
+        }"></i>
       </li>
     </label>
   </ul>

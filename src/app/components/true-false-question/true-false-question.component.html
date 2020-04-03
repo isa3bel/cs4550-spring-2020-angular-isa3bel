@@ -1,11 +1,21 @@
-<h4>{{ question.question }}</h4>
+<h4>
+  {{ question.question
+  }}<i
+    class="fa"
+    [ngClass]="{
+      'fa-check': answer === question.correct && grading,
+      'fa-times': answer !== question.correct && grading
+    }"
+  ></i>
+</h4>
 <ul class="list-group">
   <label>
     <li
       class="list-group-item"
       [ngClass]="{
         'list-group-item-success':
-          (answer === question.correct && grading && answer === 'true') || (answer !== question.correct && grading && answer === 'false'),
+          (answer === question.correct && grading && answer === 'true') ||
+          (answer !== question.correct && grading && answer === 'false'),
         'list-group-item-danger':
           answer !== question.correct && grading && answer === 'true'
       }"
@@ -15,7 +25,16 @@
         value="true"
         [(ngModel)]="answer"
         name="{{ question._id }}"
-      />True
+      />True<i
+        class="fa"
+        [ngClass]="{
+          'fa-check':
+            (answer === question.correct && grading && answer === 'true') ||
+            (answer !== question.correct && grading && answer === 'false'),
+          'fa-times':
+            answer !== question.correct && grading && answer === 'true'
+        }"
+      ></i>
     </li>
   </label>
 </ul>
@@ -25,7 +44,8 @@
       class="list-group-item"
       [ngClass]="{
         'list-group-item-success':
-          (answer === question.correct && grading && answer === 'false') || (answer !== question.correct && grading && answer === 'true'),
+          (answer === question.correct && grading && answer === 'false') ||
+          (answer !== question.correct && grading && answer === 'true'),
         'list-group-item-danger':
           answer !== question.correct && grading && answer === 'false'
       }"
@@ -35,7 +55,16 @@
         [(ngModel)]="answer"
         value="false"
         name="{{ question._id }}"
-      />False
+      />False<i
+        class="fa"
+        [ngClass]="{
+          'fa-check':
+            (answer === question.correct && grading && answer === 'false') ||
+            (answer !== question.correct && grading && answer === 'true'),
+          'fa-times':
+            answer !== question.correct && grading && answer === 'false'
+        }"
+      ></i>
     </li>
   </label>
 </ul>
