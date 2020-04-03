@@ -11,10 +11,13 @@ export class MultipleChoiceQuestionComponent implements OnInit {
 
   @Input()
   question
-  answer = ''
+  answer = null
   grading = false
   correct
   grade = () => {
+    if (this.answer === null ) {
+      return false;
+    }
     this.grading = true;
     console.log(this.grading);
     if (this.answer === this.question.correct) {
