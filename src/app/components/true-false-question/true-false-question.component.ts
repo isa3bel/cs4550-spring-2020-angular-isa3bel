@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, EventEmitter, Output } from "@angular/core";
 
 @Component({
   selector: "app-true-false-question",
@@ -10,19 +10,40 @@ export class TrueFalseQuestionComponent implements OnInit {
 
   @Input()
   question
+  @Input()
   answer = null
   grading = false;
   correct
-  grade = () => {
-    if (this.answer === null) {
-      return false;
+  @Output()
+  answerChange = new EventEmitter<string>()
+  // submitAnswer = () => {
+  //   if (this.answer === null ) {
+  //     return;
+  //   }
+  //   this.answerChange.emit(this.answer)
+  // }
+
+  submitAnswer = () => {
+    if (this.answer === null ) {
+      return;
     }
     this.grading = true;
     console.log(this.grading);
     if (this.answer === this.question.correct) {
       this.correct = true;
     }
+    this.answerChange.emit(this.answer)
   };
+  // grade = () => {
+  //   if (this.answer === null) {
+  //     return false;
+  //   }
+  //   this.grading = true;
+  //   console.log(this.grading);
+  //   if (this.answer === this.question.correct) {
+  //     this.correct = true;
+  //   }
+  // };
 
   
   ngOnInit(): void {}
