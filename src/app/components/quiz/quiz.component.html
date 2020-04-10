@@ -20,3 +20,10 @@
 <button class="btn-primary btn" (click)="submitQuiz()">
   Submit Quiz
  </button>
+
+ <h4>Your score: {{attempt}}%</h4>
+All Attemps:
+ <li *ngFor="let a of prevAttempts" class="list-group-item">
+  {{a}}%
+</li>
+
